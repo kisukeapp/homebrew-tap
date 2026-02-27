@@ -1,25 +1,25 @@
 class KisukeCliDev < Formula
   desc "Kisuke CLI"
   homepage "https://kisuke.app"
-  version "1.1.16"
+  version "1.1.20"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://6a348304da22f29510e4479f02a7fa33.r2.cloudflarestorage.com/releases/connect/#{version}/cli/darwin-arm64/kisuke-cli-#{version}-darwin-arm64.tar.gz"
-      sha256 "e553acf9fa95f8d1d6f74787a59768aa36fdc1130d33b3cb1688c53543864c9b"
+      url "https://download.kisuke.dev/connect/#{version}/cli/darwin-arm64/kisuke-cli-#{version}-darwin-arm64.tar.gz"
+      sha256 "05a2e3e2caa52d5b52485584c1e10f7033edc9b711b5d4307b8fdb2ef4b75207"
     else
-      url "https://6a348304da22f29510e4479f02a7fa33.r2.cloudflarestorage.com/releases/connect/#{version}/cli/darwin-x64/kisuke-cli-#{version}-darwin-x64.tar.gz"
-      sha256 "433a505d0111ef82ce6dec1f80b8895fbbc36827263744b53afeab447589b274"
+      url "https://download.kisuke.dev/connect/#{version}/cli/darwin-x64/kisuke-cli-#{version}-darwin-x64.tar.gz"
+      sha256 "ccd81017736cd5e23dbb093b1692cfc00907b370bf194ead322c3521451c87d6"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://6a348304da22f29510e4479f02a7fa33.r2.cloudflarestorage.com/releases/connect/#{version}/cli/linux-arm64/kisuke-cli-#{version}-linux-arm64.tar.gz"
-      sha256 "5f3c20d01806db0ffdc5a5e9d86dcff7c5c4f78278bb1b10f3605c2ba3ca1f84"
+      url "https://download.kisuke.dev/connect/#{version}/cli/linux-arm64/kisuke-cli-#{version}-linux-arm64.tar.gz"
+      sha256 "551ceeffe15bfd4b9bce11a6b5345b4bf22c6b2de9a9f9a5f8895bc905d4a9f6"
     else
-      url "https://6a348304da22f29510e4479f02a7fa33.r2.cloudflarestorage.com/releases/connect/#{version}/cli/linux-x64/kisuke-cli-#{version}-linux-x64.tar.gz"
-      sha256 "2ad33b64f9aaf8eb23e91ee087b5843ac29e52cfc39109c201f2d27107633580"
+      url "https://download.kisuke.dev/connect/#{version}/cli/linux-x64/kisuke-cli-#{version}-linux-x64.tar.gz"
+      sha256 "a66df7b2cfd376ecfb475764c6dc07814cbe395089a52105593fceff8f42f831"
     end
   end
 
