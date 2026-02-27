@@ -24,16 +24,8 @@ class KisukeCliDev < Formula
   end
 
   def install
-    bundle =
-      if OS.mac?
-        Hardware::CPU.arm? ? "kisuke-cli-#{version}-darwin-arm64" : "kisuke-cli-#{version}-darwin-x64"
-      else
-        Hardware::CPU.arm? ? "kisuke-cli-#{version}-linux-arm64" : "kisuke-cli-#{version}-linux-x64"
-      end
-
-    libexec.install Dir["#{bundle}/*"]
-    env_file = "#{bundle}/.env.staging"
-    libexec.install env_file if File.exist?(env_file)
+    libexec.install Dir["*"]
+    libexec.install ".env.staging" if File.exist?(".env.staging")
     bin.write_exec_script libexec/"kisuke"
   end
 end
