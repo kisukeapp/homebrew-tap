@@ -1,31 +1,39 @@
 class KisukeCliDev < Formula
   desc "Kisuke CLI"
   homepage "https://kisuke.app"
-  version "1.1.31"
+  version "1.1.33"
 
   on_macos do
     if Hardware::CPU.arm?
       url "https://download.kisuke.dev/connect/#{version}/cli/darwin-arm64/kisuke-cli-#{version}-darwin-arm64.tar.gz"
-      sha256 "78673a2cbd1a6db8d57073ecf49e8ed833d3635d3498bf2e2fdc34410298234b"
+      sha256 "992cf559e26bd7fb7c0854764bfb88e66b7417808b225e499ec6d16019bbc9c0"
     else
       url "https://download.kisuke.dev/connect/#{version}/cli/darwin-x64/kisuke-cli-#{version}-darwin-x64.tar.gz"
-      sha256 "a5b1039b2210f348ffb3f9e586046700eeb1295c5f4a3da3e7739296420bdc96"
+      sha256 "c07c02befa0ecac4a7381f1740e0c4af734d586e8156559bd79ee8bd53ae9599"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
       url "https://download.kisuke.dev/connect/#{version}/cli/linux-arm64/kisuke-cli-#{version}-linux-arm64.tar.gz"
-      sha256 "e9d5b98523aa85ff40b3739c833b1d836d62e2430d82d253a6b2a94a60600184"
+      sha256 "2278413ff26cec38d8209ba21d232d4684566b12c2d6e4d09aba94a1d43f8ee3"
     else
       url "https://download.kisuke.dev/connect/#{version}/cli/linux-x64/kisuke-cli-#{version}-linux-x64.tar.gz"
-      sha256 "d2a9afacf736abef998e00c124c63f29dbe2b5894615f03fe3e75163d7a5bf88"
+      sha256 "c5dfcb67ea47052d6ab1c12457953c3c0f86fde0028851eea76432923564a6a0"
     end
   end
 
   def install
-    libexec.install Dir["*"]
-    libexec.install ".env.staging" if File.exist?(".env.staging")
+    bundle =
+      if OS.mac?
+        Hardware::CPU.arm? ? "kisuke-cli-#{version}-darwin-arm64" : "kisuke-cli-#{version}-darwin-x64"
+      else
+        Hardware::CPU.arm? ? "kisuke-cli-#{version}-linux-arm64" : "kisuke-cli-#{version}-linux-x64"
+      end
+
+    libexec.install Dir["#{bundle}/*"]
+    env_file = "#{bundle}/.env.staging"
+    libexec.install env_file if File.exist?(env_file)
     bin.write_exec_script libexec/"kisuke"
   end
 end
