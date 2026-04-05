@@ -1,13 +1,13 @@
 cask "kisuke-dev" do
-  version "1.1.37"
+  version "1.1.40"
 
   on_arm do
-    sha256 "9ca220e58ed24b2385d78aa86f7348953592240b1dfa5e81e437314e744226ac"
+    sha256 "b2f42f715796fb5c054017e226febe8005ce01e13bc44bd1d3ba1c33df984037"
     url "https://download.kisuke.dev/kisuke/#{version}/mac/arch_arm64/kisuke-#{version}-macos-arm64.dmg"
   end
 
   on_intel do
-    sha256 "2b2ebb6cd19c7fbc20272475d4e541cf1cb58e19f8add71f2aa3de27f182d317"
+    sha256 "ae79b32cc2a83396ddf8d76965c728ffa018fbf72b30a4cc338104c96ab35e64"
     url "https://download.kisuke.dev/kisuke/#{version}/mac/arch_x86/kisuke-#{version}-macos-x64.dmg"
   end
 
