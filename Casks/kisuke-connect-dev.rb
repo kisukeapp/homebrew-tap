@@ -1,8 +1,8 @@
 cask "kisuke-connect-dev" do
   arch arm: "arm64", intel: "x64"
 
-  version "1.1.94"
-  sha256 arm: "32ea3a9283f856c840377ce95901f4d9dce85e32e0402d00affe187ff5753b42", intel: "c585485451eb0f17c7ef6e1269a684f364308937b9480cad59f4cd4b24d49196"
+  version "1.1.95"
+  sha256 arm: "d36bcbc070bded0fcf4e889cef651598ad78aeb0cd24e3ebe8ae0006ce3aad63", intel: "80c05b11d64025e75faa57ee0048aaabc8672b1477396385ecd29997aa9b4d61"
 
   url "https://download.kisuke.dev/connect/#{version}/desktop/macos-#{arch}/kisuke-connect-#{version}-macos-#{arch}.dmg"
   name "Kisuke Connect"
